@@ -28,7 +28,9 @@ F. Zhou, J.-F. Molinari, and K. T. Ramesh, “A cohesive model based fragmentati
 flowchart LR
     A[Materials Dictionary] --> B[Sample Parameters]
     subgraph MonteCarlo Loop
-        B --> C{For each Strain Rate}\n        C -->|rate in range| D{For each Material}\n        D --> E[Uniformly sample E, Gc, strength, density (N_sim draws)]
+        B --> C{For each Strain Rate}
+                C -->|rate in range| D{For each Material}
+                        D --> E[Uniformly sample E, Gc, strength, density (N_sim draws)]
         E --> F[run_1D_simulation_time(...) from Fragmentation_2.py]
         F --> G[Collect outputs:
 - time snapshots  
